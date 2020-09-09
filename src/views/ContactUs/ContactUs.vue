@@ -1,13 +1,49 @@
 <template>
-  <div>联系我们</div>
+  <div class="ContactUs">
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <span>北京万象互娱网络科技有限公司</span>
+        <el-button style="float: right; padding: 3px 0" type="text"></el-button>
+      </div>
+      <div class="text item">QQ：546989691</div>
+      <div class="text item">微信：yangzhen546989691</div>
+      <div class="text item">邮箱：546989691@qq.com</div>
+    </el-card>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
+<style lang='less'>
+.ContactUs {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .box-card {
+    width: 400px;
+    height: 200px;
+  }
+  .text {
+    font-size: 14px;
+  }
+  .item {
+    margin-bottom: 18px;
+  }
 
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both;
+  }
+
+  .box-card {
+    width: 480px;
+  }
+}
 </style>
