@@ -1,24 +1,43 @@
 <template>
   <el-container>
     <el-header>
-      <div><img src="" alt=""></div>
+      <div>
+        <img src alt />
+      </div>
       <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
         <el-menu-item index="home">首页</el-menu-item>
+        <el-menu-item index="exhibition-works">作品展示</el-menu-item>
+        <el-menu-item index="contact">联系我们</el-menu-item>
       </el-menu>
     </el-header>
-    <el-main>Main</el-main>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
   </el-container>
 </template>
 
 <script>
 export default {
+    name: 'Container',
     data(){
         return {
-            img:{
-                
+            enum:{
+              "home":'Home',
+              'exhibition-works':'ExhibitionOfWorks',
+              'contact':'ContactUs'
             },
+            img:{},
             activeIndex: 'home'
         }
+    },
+    methods:{
+      handleSelect(key){
+        let params = {
+          name: this.enum[key],
+          params:{}
+        }
+        this.$router.push(params)
+      }
     }
 };
 </script>
@@ -42,13 +61,14 @@ export default {
     justify-content: center;
     .el-menu{
         width: 50%;
-        
+        display: flex;
+        justify-content: center;
+        .el-menu-item{
+          font-size: 16px;
+        }
     }
   }
   .el-main {
-    background-color: #d3dce6;
-    color: #333;
-    text-align: center;
     height: calc(100% - 60px);
   }
 }

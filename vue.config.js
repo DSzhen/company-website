@@ -45,6 +45,7 @@ module.exports = {
     // configure webpack-dev-server behavior
     //本地运行需要放开代理（打包到服务器时需要注释掉，服务器部署使用nginx代理）
     devServer: {
+        hot:true,
         // before(app) {
         //     app.get('/api/drawingList', (req, res) => {
         //         res.json({

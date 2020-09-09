@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Container from '@/views/Container/Container.vue'
-
+import Home from '@/views/Home/Home.vue'
+import ContactUs from '@/views/ContactUs/ContactUs.vue'
+import ExhibitionOfWorks from '@/views/ExhibitionOfWorks/ExhibitionOfWorks.vue'
 Vue.use(Router)
 export default new Router({
     routes: [
-        {path: '/', component: Container, meta: {title: '首页'}},
+        {path: '/', component: Home, name:'Home', meta: {title: '首页'}},
+        {path: '/ContactUs', component: ContactUs, name:'ContactUs', meta: {title: '联系我们'}},
+        {path: '/ExhibitionOfWorks', component: ExhibitionOfWorks, name:'ExhibitionOfWorks', meta: {title: '作品展示'}},
     ]
 })
