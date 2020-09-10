@@ -30,6 +30,7 @@ export default {
   // 监听,当路由发生变化的时候执行
   watch:{
     $route(to,from){
+      console.log(from);
       this.activeIndex = to.name || 'Home'
     }
   },
