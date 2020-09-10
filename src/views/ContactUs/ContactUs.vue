@@ -1,7 +1,7 @@
 <template>
   <div class="ContactUs">
     <el-card class="box-card">
-      <div slot="header" class="clearfix">
+      <div class="clearfix">
         <span>北京万象互娱网络科技有限公司</span>
         <el-button style="float: right; padding: 3px 0" type="text"></el-button>
       </div>
