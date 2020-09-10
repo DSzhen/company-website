@@ -2,16 +2,15 @@
   <div class="ExhibitionOfWorks">
     <el-row>
       <el-col :span="8" v-for="(item, index) in cardList" :key="index" :offset="index > 0 ? 2 : 0">
-        <el-card class="el-card" shadow="always" :body-style="{ padding: '0px' } ">
-          <img
-            :src="item.imgUrl"
-            class="image"
-          />
-          <div style="padding: 14px;">
+        <el-card
+          class="el-card"
+          shadow="always"
+          :body-style="{ padding: '0px' } "
+        >
+          <img :src="item.imgUrl" class="image" @click="showDetail(item)" />
+          <div style="padding: 14px;" @click="showDetail(item)">
             <span class="name">{{item.name}}</span>
-            <p class="brief-introduction">
-              简介：{{item.briefIntroduction}}
-            </p>
+            <p class="brief-introduction">简介：{{item.briefIntroduction}}</p>
             <div class="time">
               <p>上线时间：{{item.date}}</p>
               <p>了解更多内容...</p>
@@ -44,6 +43,22 @@ export default {
       ]
     };
   },
+  methods:{
+    showDetail(item){
+      console.log(item);
+      switch (item.name) {
+        case '方块王者':
+          this.$router.push({
+            name:"FangKuaiWangZheDetail"
+          })
+          break;
+      case '果果游世界':
+          break;
+        default:
+          break;
+      }
+    }
+  }
 };
 </script>
 
