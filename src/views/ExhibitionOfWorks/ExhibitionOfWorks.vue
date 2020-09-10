@@ -2,11 +2,7 @@
   <div class="ExhibitionOfWorks">
     <el-row>
       <el-col :span="8" v-for="(item, index) in cardList" :key="index" :offset="index > 0 ? 2 : 0">
-        <el-card
-          class="el-card"
-          shadow="always"
-          :body-style="{ padding: '0px' } "
-        >
+        <el-card class="el-card" shadow="always" :body-style="{ padding: '0px' } ">
           <img :src="item.imgUrl" class="image" @click="showDetail(item)" />
           <div style="padding: 14px;" @click="showDetail(item)">
             <span class="name">{{item.name}}</span>
@@ -27,38 +23,43 @@ export default {
   name: "ExhibitionOfWorks",
   data() {
     return {
-      cardList:[
+      cardList: [
         {
-          imgUrl: require('@/assets/images/dt.jpg'),
-          name: '方块王者',
-          briefIntroduction: '"方块王者"是一款休闲益智的游戏，玩家通过玩俄罗斯方块实现积攒金币，兑换自己喜欢的物品和红包。挑战不同的玩法【单人赛】【匹配赛】【排位赛】【活动赛】，挑战更厉害的玩家，成为俄罗斯方块大神！',
-          date: '2020-10-01'
+          imgUrl: require("@/assets/images/FangKuai/dt.jpg"),
+          name: "方块王者",
+          briefIntroduction:
+            '"方块王者"是一款休闲益智的游戏，玩家通过玩俄罗斯方块实现积攒金币，兑换自己喜欢的物品和红包。挑战不同的玩法【单人赛】【匹配赛】【排位赛】【活动赛】，挑战更厉害的玩家，成为俄罗斯方块大神！',
+          date: "2020-10-01",
         },
         {
-          imgUrl: require('@/assets/images/dh.jpg'),
-          name: '果果游世界',
-          briefIntroduction: '"果果游世界"水果不同品种变换，环游虚拟世界，解锁世界地图升级拿奖励。更可以合成水果升级赚钱，让你在玩游戏的过程中体验赚钱的乐趣！',
-          date: '2020-09-09'
-        }
-      ]
+          imgUrl: require("@/assets/images/GuoGuo/lx.png"),
+          name: "果果游世界",
+          briefIntroduction:
+            '"果果游世界"水果不同品种变换，环游虚拟世界，解锁世界地图升级拿奖励。更可以合成水果升级赚钱，让你在玩游戏的过程中体验赚钱的乐趣！',
+          date: "2020-10-01",
+        },
+      ],
     };
   },
-  methods:{
-    showDetail(item){
+  methods: {
+    showDetail(item) {
       console.log(item);
       switch (item.name) {
-        case '方块王者':
+        case "方块王者":
           this.$router.push({
-            name:"FangKuaiWangZheDetail"
-          })
+            name: "FangKuaiWangZheDetail",
+          });
           break;
-      case '果果游世界':
+        case "果果游世界":
+          this.$router.push({
+            name: "GuoGuoYouShiJieDetail",
+          });
           break;
         default:
           break;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -72,13 +73,13 @@ export default {
     align-items: center;
     padding: 0;
     .el-card:hover {
-      transform:scale(1.02);
+      transform: scale(1.02);
     }
-    .el-col-8{
+    .el-col-8 {
       width: 400px;
       cursor: pointer;
     }
-    .name{
+    .name {
       font-size: 16px;
       font-weight: 600;
     }
@@ -87,16 +88,16 @@ export default {
       width: 400px;
       display: block;
     }
-    .brief-introduction{
+    .brief-introduction {
       height: 100px;
       color: #a798b1;
     }
-    .time{
+    .time {
       display: flex;
-      p{
+      p {
         width: 50%;
       }
-      p:last-child{
+      p:last-child {
         cursor: pointer;
         text-align: right;
         color: royalblue;

@@ -28,14 +28,28 @@ export default {
     };
   },
   // 监听,当路由发生变化的时候执行
-  watch:{
-    $route(to,from){
+  watch: {
+    $route(to, from) {
       console.log(from);
-      this.activeIndex = to.name || 'Home'
-    }
+      if (
+        to.name === "FangKuaiWangZheDetail" ||
+        to.name === "GuoGuoYouShiJieDetail"
+      ) {
+        this.activeIndex = "ExhibitionOfWorks";
+      } else {
+        this.activeIndex = to.name || "Home";
+      }
+    },
   },
-  mounted(){
-    this.activeIndex = this.$route.name || 'Home'
+  mounted() {
+    if (
+      this.$route.name === "FangKuaiWangZheDetail" ||
+      this.$route.name === "GuoGuoYouShiJieDetail"
+    ) {
+      this.activeIndex = "ExhibitionOfWorks";
+    } else {
+      this.activeIndex = this.$route.name || "Home";
+    }
   },
   methods: {
     handleSelect(key) {

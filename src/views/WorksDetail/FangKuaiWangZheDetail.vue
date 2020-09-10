@@ -24,27 +24,27 @@
 
 <script>
 export default {
-    name:"",
+    name:"FangKuaiWangZheDetail",
     data(){
         return {
             img:{
-                fangkuai:require('@/assets/images/fangkuai.png')
+                fangkuai:require('@/assets/images/FangKuai/fangkuai.png')
             },
             imgList:[
                 {
-                    imgUrl:require("@/assets/images/dt.jpg")
+                    imgUrl:require("@/assets/images/FangKuai/dt.jpg")
                 },
                 {
-                    imgUrl:require("@/assets/images/yxz.jpg")
+                    imgUrl:require("@/assets/images/FangKuai/yxz.jpg")
                 },
                 {
-                    imgUrl:require("@/assets/images/pp.jpg")
+                    imgUrl:require("@/assets/images/FangKuai/pp.jpg")
                 },
                 {
-                    imgUrl:require("@/assets/images/rw.jpg")
+                    imgUrl:require("@/assets/images/FangKuai/rw.jpg")
                 },
                 {
-                    imgUrl:require("@/assets/images/dh.jpg")
+                    imgUrl:require("@/assets/images/FangKuai/dh.jpg")
                 }
             ]
         }

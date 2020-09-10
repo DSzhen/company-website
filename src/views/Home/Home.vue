@@ -18,9 +18,18 @@ export default {
   data() {
     return {
       imgList: [
-        require("@/assets/images/dh.jpg"),
-        require("@/assets/images/dt.jpg"),
-        require("@/assets/images/yxz.jpg"),
+        require("@/assets/images/GuoGuo/lx.png"),
+        require("@/assets/images/GuoGuo/ck.png"),
+        require("@/assets/images/GuoGuo/dl.png"),
+        require("@/assets/images/GuoGuo/fx.png"),
+        require("@/assets/images/GuoGuo/hc.png"),
+        require("@/assets/images/GuoGuo/lxt.png"),
+        require("@/assets/images/FangKuai/dh.jpg"),
+        require("@/assets/images/FangKuai/dt.jpg"),
+        require("@/assets/images/FangKuai/yxz.jpg"),
+        require("@/assets/images/FangKuai/pp.jpg"),
+        require("@/assets/images/FangKuai/rw.jpg"),
+        require("@/assets/images/GuoGuo/sg.png")
       ],
     };
   },
@@ -35,15 +44,17 @@ export default {
     margin: 0 10px;
     .el-carousel__container {
       .el-carousel__item {
+        display: flex;
+        justify-content: center;
         img {
-          height: 100%;
-          width: 100%;
+          height: 350px;
+          width: 250px;
         }
       }
     }
   }
   .brief-introduction{
-    height: calc(100% - 600px);
+    height: calc(100% - 400px);
     padding: 10px 20px;
     background: url('../../assets/images/lanbg.jpg') no-repeat center #4c97db;
     .first{
