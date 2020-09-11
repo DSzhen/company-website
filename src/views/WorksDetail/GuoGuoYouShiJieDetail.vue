@@ -1,7 +1,7 @@
 <template>
   <div class="GuoGuoYouShiJieDetail">
     <el-card class="box-card-title">
-      <img :src="img.fangkuai" alt />
+      <img :src="img.guoguo" alt />
       <div>
         <p>
           <span class="jiacu">apk下载：</span>
@@ -28,7 +28,7 @@ export default {
     data(){
         return {
             img:{
-                fangkuai:require('@/assets/images/FangKuai/fangkuai.png')
+                guoguo:require('@/assets/images/GuoGuo/tb.png')
             },
             imgList:[
                 {
