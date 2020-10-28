@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-11 09:03:33
+ * @LastEditTime: 2020-10-28 18:02:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \company-website\src\views\WorksDetail\FangKuaiWangZheDetail.vue
+-->
 <template>
   <div class="FangKuaiWangZheDetail">
     <el-card class="box-card-title">
@@ -6,6 +14,7 @@
         <p>
           <span class="jiacu">apk下载：</span>
           <button type="button" @click="download()">立即下载</button>
+          <span class="privacy-policy" @click="openWin()">隐私政策</span>
         </p>
         <p>
           <span class="jiacu">简介：</span>
@@ -24,36 +33,46 @@
 
 <script>
 export default {
-    name:"FangKuaiWangZheDetail",
-    data(){
-        return {
-            img:{
-                fangkuai:require('@/assets/images/FangKuai/fangkuai.png')
-            },
-            imgList:[
-                {
-                    imgUrl:require("@/assets/images/FangKuai/dt.jpg")
-                },
-                {
-                    imgUrl:require("@/assets/images/FangKuai/yxz.jpg")
-                },
-                {
-                    imgUrl:require("@/assets/images/FangKuai/pp.jpg")
-                },
-                {
-                    imgUrl:require("@/assets/images/FangKuai/rw.jpg")
-                },
-                {
-                    imgUrl:require("@/assets/images/FangKuai/dh.jpg")
-                }
-            ]
+  name: "FangKuaiWangZheDetail",
+  data() {
+    return {
+      img: {
+        fangkuai: require('@/assets/images/FangKuai/fangkuai.png')
+      },
+      imgList: [
+        {
+          imgUrl: require("@/assets/images/FangKuai/dt.jpg")
+        },
+        {
+          imgUrl: require("@/assets/images/FangKuai/yxz.jpg")
+        },
+        {
+          imgUrl: require("@/assets/images/FangKuai/pp.jpg")
+        },
+        {
+          imgUrl: require("@/assets/images/FangKuai/rw.jpg")
+        },
+        {
+          imgUrl: require("@/assets/images/FangKuai/dh.jpg")
         }
-    },
-    methods:{
-        download(){
-            window.location.href="http://download.haveneed.cn/fkwz/com.yilian.fangkaiwangzhem.apk";
-        }
+      ]
     }
+  },
+  methods: {
+    download() {
+      window.location.href = "https://a.app.qq.com/o/simple.jsp?pkgname=com.yilian.fangkaiwangzhem";
+    },
+    // 新开页展示隐私政策
+    openWin() {
+      let url = location.href
+      const index = url.indexOf('#')
+      if (index > -1) {
+        url = url.slice(0, index)
+      }
+      url += '#/FangKuaiPrivacyPolicy'
+      window.open(url)
+    }
+  }
 }
 </script>
 
@@ -71,6 +90,11 @@ export default {
         }
         .jiacu{
             font-weight: 600;
+        }
+        .privacy-policy{
+            color: cornflowerblue;
+            margin-left: 5px;
+            cursor: pointer;
         }
     }
     .brief-introduction{
